@@ -1,10 +1,6 @@
-all: clean en zh elab
-en: resume.tex
-	latexmk -xelatex -pdf resume.tex
+all: clean zh
 zh: resume-cn.tex
-	latexmk -xelatex -pdf resume-cn.tex
-elab: resume-elab.tex
-	latexmk -xelatex -pdf resume-elab.tex
+	xelatex -synctex=1 -interaction=nonstopmode -file-line-error -pdf resume-cn.tex
 
 ifeq ($(OS),Windows_NT)
   # on Windows
@@ -15,7 +11,7 @@ else
 endif
 
 clean:
-	$(RM) *.log *.aux *.bbl *.blg *.synctex.gz *.out *.toc *.lof *.idx *.ilg *.ind *.pdf *.cut *.fdb_latexmk
+	$(RM) *.log *.aux *.bbl *.blg *.synctex.gz *.out *.toc *.lof *.idx *.ilg *.ind *.pdf *.cut *.fdb_latexmk *.fls
 
 clean-tex:
-	$(RM) resume.tex resume-cn.tex resume-elab.tex
+	$(RM) resume-cn.tex
