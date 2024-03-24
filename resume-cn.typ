@@ -60,7 +60,7 @@
     #cventry(
         tl: [开源社区贡献],
     )[
-        #ghrepo("rust-lang/rust-analyzer", icon: false) (活跃), #ghrepo("rust-lang/rust-clippy", icon: false), #ghrepo("moonbitlang/tree-sitter-moonbit", icon: false), #ghrepo("yuin/goldmark", icon: false), #ghrepo("doomemacs/doomemacs", icon: false), #link("https://github.com/roife")[更多项目见 GitHub]
+        #ghrepo("rust-lang/rust-analyzer", icon: false)（活跃，50+ 提交），#ghrepo("moonbitlang/tree-sitter-moonbit", icon: false)（活跃，20+ 提交），#ghrepo("rust-lang/rust-clippy", icon: false)，#ghrepo("yuin/goldmark", icon: false)，#ghrepo("doomemacs/doomemacs", icon: false)，#link("https://github.com/roife")[更多项目见 GitHub]
     ]
 
   == 技能

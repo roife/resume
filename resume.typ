@@ -60,7 +60,7 @@
      #cventry(
         tl: [Open-source contributions],
     )[
-        #ghrepo("rust-lang/rust-analyzer", icon: false) (active), #ghrepo("rust-lang/rust-clippy", icon: false), #ghrepo("moonbitlang/tree-sitter-moonbit", icon: false), #ghrepo("yuin/goldmark", icon: false), #ghrepo("doomemacs/doomemacs", icon: false) and #link("https://github.com/roife")[more on GitHub]
+        #ghrepo("rust-lang/rust-analyzer", icon: false) (active, 50+ commits), #ghrepo("moonbitlang/tree-sitter-moonbit", icon: false) (active, 20+ commits), #ghrepo("rust-lang/rust-clippy", icon: false), #ghrepo("yuin/goldmark", icon: false), #ghrepo("doomemacs/doomemacs", icon: false) and #link("https://github.com/roife")[more on GitHub]
     ]
 
   == Skills
