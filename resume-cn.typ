@@ -24,8 +24,8 @@
         bl: [本科，计算机科学与技术],
     )[
         - GPA 3.84/4.00，获 2022 年*国家奖学金*（全国仅 0.2%），北京航空航天大学*优秀毕业生*
-        - 在 2021 年#link("https://compiler.educg.net")[全国大学生计算机系统能力大赛 · 编译系统设计竞赛（华为毕昇杯）]中获得*一等奖*，总排名第二
-        - 助教：_程序设计基础_（2020 秋），_面向对象的设计与构建_（2021 秋，2022 春）
+        - 在 2021 年#link("https://compiler.educg.net")[全国大学生计算机系统能力大赛·编译系统设计竞赛（华为毕昇杯）]中获得*一等奖*，总排名第二
+        - 助教：_程序设计基础_（2020 秋），_面向对象的设计与构建_（S.T.A.R 教辅团队，2021 秋，2022 春）
     ]
 
   == 项目开发
@@ -66,11 +66,11 @@
 
   == 技能
 
-    - *编程语言*：不限于特定语言。尤其了解 C, C++, Java, Rust, Python, Javascript, Verilog/SystemVerilog；同时能写 Ruby, Swift, Javascript, OCaml, Coq, Haskell 等
-    - *程序语言理论*：了解类型系统、形式语义和形式验证相关知识
-    - *编译器*：了解编译优化以及多种程序表示方式（如 SSA 等）；熟悉语法解析器和解释器开发；对 LLVM 有一定了解
-    - *IDE*：熟悉基于 LSP 的 IDE 开发，尤其熟悉 rust-analyzer 和 clangd；熟悉基于增量计算的 IDE 架构
-    - *程序分析*：熟悉静态分析算法（如指针分析，IFDS 等）；熟悉 Java 上的程序分析
+    - *编程语言*：不限于特定语言。尤其了解 C, C++, Java, Rust, Python, Verilog/SystemVerilog；同时能写 Ruby, Swift, Javascript, OCaml, Coq, Haskell 等
+    - *程序语言理论*：了解类型系统、形式语义、形式验证和计算理论的相关知识
+    - *编译器*：熟悉编译优化以及多种 IR（如 SSA 等）；能独立完成一个完整的编译器和解释器的开发；对 LLVM 有一定了解
+    - *IDE*：熟悉基于 LSP 的 IDE 开发，尤其熟悉 rust-analyzer 和 clangd；熟悉基于增量计算的 IDE 架构和 IDE 的相关数据结构
+    - *程序分析*：熟悉静态分析算法（如数据流分析，指针分析，IFDS 等）
     - *Web 与移动开发*：全栈。能够熟练使用 Vue、Rails、Docker、PostgreSQL、Redis 等技术进行 web 开发；了解 SwiftUI
     - *开发环境*：熟悉 Emacs；习惯在 macOS 和 Linux 环境下工作；能熟练使用 AI 提高工作效率
 
