@@ -23,7 +23,7 @@
         tr: [2019.09 - 2023.06],
         bl: [Bachelor’s Degree in Computer Science and Technology],
     )[
-        - GPA 3.84/4.00. Awarded the *National Scholarship* 2022 (top 0.2% national-wide) and *Outstanding Graduate of BUAA*.
+        - GPA 3.84/4.00. *Outstanding Graduate of BUAA*. Awarded the *National Scholarship* 2022 (top 0.2% national-wide) and several scholarships in university.
         - Won *the First Prize* in the #link("https://compiler.educg.net")[NSCSCC Compilation System Design Competition] 2021, ranking 2nd overall.
         - TA for _Programming in Practice_ (Fall 2020), _Object-oriented Design and Construction_ (S.T.A.R, Fall 2021, Spring 2022).
     ]
@@ -59,16 +59,15 @@
      #cventry(
         tl: [Open-source contributions],
     )[
-        - Rust-lang: #ghrepo("rust-lang/rust-analyzer", icon: true), #ghrepo("rust-lang/rust-clippy", icon: true), #ghrepo("rust-lang/rustup", icon: true) ;
-        - LLVM Foundation: #ghrepo("llvm/llvm-project", icon: true), #ghrepo("clangd/vscode-clangd", icon: true), #ghrepo("llvm/clangd-www", icon: true) ;
-        - #ghrepo("moonbitlang/tree-sitter-moonbit", icon: true), #ghrepo("yuin/goldmark", icon: true), #ghrepo("doomemacs/doomemacs", icon: true) and #link("https://github.com/roife")[more on my GitHub].
+        - *Rust-org Member*. #ghrepo("rust-lang/rust-analyzer", icon: false) (*contributors team member*, contributed over 50 PRs), #ghrepo("rust-lang/rust-clippy", icon: false), #ghrepo("rust-lang/rustup", icon: false) ;
+        - #ghrepo("llvm/llvm-project", icon: false), #ghrepo("clangd/vscode-clangd", icon: false), #ghrepo("google/autocxx", icon: false), #ghrepo("moonbitlang/tree-sitter-moonbit", icon: false), #ghrepo("yuin/goldmark", icon: false), #ghrepo("llvm/clangd-www", icon: false), #ghrepo("doomemacs/doomemacs", icon: false) and #link("https://github.com/roife")[more on my GitHub].
     ]
 
   == Skills
 
     - *Programming Languages*: Not limited to specific language. Especially proficient in C, C++, Java, Rust, Python, Verilog/SystemVerilog. Comfortable with Ruby, Swift, JavaScript, OCaml, Coq, Haskell, etc.
-    - *PL Theory*: Familiar with type system, formal semantics, formal verification and theory of computation.
-    - *Compiler*: Proficient in compilation optimizations and various IR such as SSA, etc. Capable of independently designing and implementing a complete compiler and interpreter. Knowledgeable about LLVM.
+    - *PL Theory*: Familiar with formal semantics, formal verification and theory of computation; proficient in theory and implementation of type system.
+    - *Compiler*: Proficient in compilation optimizations and various IR such as SSA, CPS, etc. Capable of independently designing and implementing a complete compiler and interpreter. Knowledgeable about LLVM.
     - *IDE*: Knowledgeable in IDE based on LSP and incremental computation, especially familiar with rust-analyzer and clangd.
     - *Program Analysis*: Familiar with static analysis such as dataflow analysis, pointer analysis, IFDS, etc.
     - *Web & Mobile*: Full-stack. Skilled in Vue, RoR, Docker, PostgreSQL, Redis; familiar with SwiftUI.
