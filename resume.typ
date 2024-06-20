@@ -59,9 +59,8 @@
      #cventry(
         tl: [Open-source contributions],
     )[
-        - Rust-lang: #ghrepo("rust-lang/rust-analyzer", icon: true), #ghrepo("rust-lang/rust-clippy", icon: true), #ghrepo("rust-lang/rustup", icon: true) ;
-        - LLVM Foundation: #ghrepo("llvm/llvm-project", icon: true), #ghrepo("clangd/vscode-clangd", icon: true), #ghrepo("llvm/clangd-www", icon: true) ;
-        - #ghrepo("moonbitlang/tree-sitter-moonbit", icon: true), #ghrepo("yuin/goldmark", icon: true), #ghrepo("doomemacs/doomemacs", icon: true) and #link("https://github.com/roife")[more on my GitHub].
+        - *Rust-lang Member*. #ghrepo("rust-lang/rust-analyzer", icon: false) (contributors team member), #ghrepo("rust-lang/rust-clippy", icon: false), #ghrepo("rust-lang/rustup", icon: false) ;
+        - #ghrepo("llvm/llvm-project", icon: false), #ghrepo("clangd/vscode-clangd", icon: false), #ghrepo("moonbitlang/tree-sitter-moonbit", icon: false), #ghrepo("yuin/goldmark", icon: false), #ghrepo("llvm/clangd-www", icon: false), #ghrepo("doomemacs/doomemacs", icon: false) and #link("https://github.com/roife")[more on my GitHub].
     ]
 
   == Skills
