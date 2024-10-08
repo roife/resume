@@ -1,9 +1,9 @@
 #import "fontawesome.typ": *
 
 #let chiline() = {
-    v(-3pt);
+    v(-8pt);
     line(length: 100%, stroke: gray);
-    v(-10pt)
+    v(-8pt)
 }
 
 #let iconlink(
@@ -49,8 +49,31 @@
     )
 }
 
+#let grid_par(
+    content
+) = {
+    par(leading: 6pt)[#content]
+}
+
+// submit, post
+#let redact(alter: none, mark: false, color: black, body) = {
+    let level = sys.inputs.at("level", default: none);
+    if level == "submit" {
+        body
+    } else if level == "post" {
+        if alter == none and mark {
+            box(hide(body), fill: color)
+        } else if alter == none and not mark {
+            box(fill: color)[(missing)]
+        } else {
+            alter
+        }
+    } else {
+        box(fill: color)[(missing)]
+    }
+}
+
 #let chicv(body) = {
-    set par(justify: true)
     let fonts = (
         "Palatino",
         "Source Han Serif SC",
@@ -74,12 +97,13 @@
             chiline() + it,
         )
     )
-    set list(indent: 0pt)
+    set list(indent: 2pt)
 
-    show link: it => underline(offset: 2pt, it)
-    set page(margin: (x: 0.9cm, y: 1.3cm),)
+    show link: it => underline(offset: 1.8pt, it)
+    set page(margin: (x: 0.85cm, top: 1cm, bottom: 0.5cm),)
     set par(justify: true)
-    set text(font: fonts, size: 10pt)
+    set text(font: fonts, size: 10.2pt)
+    set block(spacing: 0.9em)
 
     body
 }
