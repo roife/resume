@@ -1,0 +1,3 @@
+[submodule "resume-private"]
+	path = resume-private
+	url = git@github.com:roife/resume-private.git
