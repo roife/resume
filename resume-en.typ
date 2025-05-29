@@ -3,7 +3,7 @@
 #show: chicv
 #set par(justify: true, leading: 0.7em)
 #show heading.where(level: 2): set text(size: 12pt)
-#set text(size: 9.5pt)
+#set text(size: 9.7pt)
 
 #let private_info = json("resume-private/private_info.json")
 #let resume_name = private_info.name_en
@@ -22,7 +22,7 @@
         tl: [Nanjing University],
         tr: [2023.09 - 2026.06 (expected)],
     )[
-      Master's Degree in #emph[Computer Science and Technology] | #link("https://pascal-lab.net")[PASCAL Lab]. Tutor: #redact(mark: true)[Yue] Li | Focus on PL and Program Analysis. #linebreak()
+      Master's Degree in #emph[Computer Science and Technology] | #link("https://pascal-lab.net")[PASCAL Lab]. Tutor: #redact(mark: true)[Yue] Li | Focus on *PL* and *Program Analysis*. #linebreak()
       TA: *Principles and Techniques of Compilers* (Spring 2024)
     ]
     #cventry(
@@ -37,14 +37,13 @@
 
     #cventry(
         tl: [NVIDIA],
-        bl: [OCG (Optimizing Code Generator) team, SW-GPU],
+        bl: [OCG (Optimizing Code Generator) team],
         br: [GPU Compiler LLVM Backend Intern],
         tr: [2025.02 - Present]
     )[
-        - Participating in unifying the memory instruction vectorizer between NVIDIA GPU graphics compiler and NVVM, ensuring the graphics compiler's vectorizer aligns with LLVM upstream:
-          - Designed an encoding scheme for *multi-address graphic memory instructions* based on the core algorithm of LLVM's memory vectorizer, implementing support for multiple GPU graphic memory instructions while minimizing divergence from upstream;
-          - Added several GPU memory instruction vectorization optimizations, such as support for irregular memory instruction;
-          - Contributed to a new pass for inferring memory access instruction offset alignment width, improving vectorizer performance.
+        - Participating in unifying the load-store instruction vectorizer between NVIDIA GPU graphics compiler and NVVM, ensuring the graphics compiler's vectorizer aligns with LLVM upstream:
+          - Designed an encoding scheme for *multi-address graphic memory instructions* for LLVM's memory-access instructions vectorizer, implementing vectorization for multiple GPU graphic memory instructions while minimizing divergence from upstream;
+          - Added several GPU memory instruction vectorization optimizations, including support for irregular memory access sequence vectorization and integer address vectorization; participated in implementing a new memory instruction alignment width inference pass, improving vectorizer performance while reducing codebase coupling;
     ]
 
     #cventry(
@@ -53,7 +52,7 @@
         br: [Project Fellow],
         tr: [2024.09 - 2025.09]
     )[
-        - As one of the rust-analyzer (official Rust IDE) *maintainers*, ranked in the *top 1%* of contributors; participated in issues handling, PR reviews, and maintenance work across most project modules:
+        - As a member of the #link("https://www.rust-lang.org/governance/teams/compiler#team-rust-analyzer-contributors", [*Rust-lang Organization*]) (rust-analyzer-contributors-team) and one of the rust-analyzer (official Rust IDE) *maintainers*, ranked in the *top 1%* of contributors; participated in issues handling and PR reviews across most project modules:
           - Implemented features like control flow highlighting, snapshot test updates, and participated in numerous bug fixes, enhancing IDE capabilities in code understanding and auto-generation;
           - Wrote a *SIMD* implementation for the unicode line breaking module for ARM NEON, achieving a *6.5x* speedup;
           - *Emergency incident response for v0.3.1992*: 4 hours after release, the community discovered a critical bug causing resource exhaustion. I identified the issue *in 3 hours* and designed a new algorithm as fix. This emergency fix controlled the incident's impact, preventing disruptions for global Rust developers.
@@ -77,7 +76,7 @@
   )[
       - Implemented a *semantic analysis framework* and IDE infra for SV, aiming to equip chip design with modern IDE features;
       - Based on an *incremental computation* architecture, designed and implemented an incremental analysis IR and specialized passes for efficient and accurate on-demand analysis;
-      - Project achieves *industry-leading standards* in functionality, performance, and usability: completed *dozens of* modern IDE features for SystemVerilog including code navigation, semantic refactoring, completion, and diagnostics with *millisecond-level* latency;
+      - Project achieves *industry-leading standards* in functionality, performance, and usability: completed *dozens of* modern IDE features for SystemVerilog including code navigation, semantic refactoring, and completion with *millisecond-level* latency;
       - Based on the Language Server Protocol, ensuring compatibility with VS Code, Emacs, NeoVim, and other mainstream editors.
   ]
 
@@ -115,37 +114,37 @@
       - Received *excellent* evaluation for the thesis. Successfully reduced inference time by 6% and binary file size by 38% for convolution and softmax operators; implemented *parse-time optimizations* that reduced compilation time by 60% and memory usage by 60%.
   ]
 
-  #cventry(
-      tl: [#fa[#code.branch] Open Source Contributions],
+    #cventry(
+      tl: [Other Personal Projects],
   )[
-      - *#fa[#rust] Rust Organization* (#link("https://www.rust-lang.org/governance/teams/compiler#team-rust-analyzer-contributors", [rust-analyzer contributors team])) member, primarily maintaining #ghrepo("rust-lang/rust-analyzer", icon: true);
-      - Also contributed to #ghrepo("rust-lang/rust", icon: true), #ghrepo("rust-lang/rust-clippy", icon: true), #ghrepo("rust-lang/rustup", icon: true), #ghrepo("rust-lang/rust-mode", icon: true);
-      - #ghrepo("llvm/llvm-project", icon: true), #ghrepo("clangd/vscode-clangd", icon: true), #ghrepo("MikePopoloski/slang", icon: true), #ghrepo("google/autocxx", icon: true), #ghrepo("yuin/goldmark", icon: true), #ghrepo("moonbitlang/tree-sitter-moonbit", icon: true), #link("https://github.com/roife")[more projects on GitHub].
+      - #ghrepo("roife/firefly", icon: true) (Rust) A simple neural network training/inference framework, implementing convolution, fully connected layers and other operators, with MNIST dataset classification implemented;
+      - #ghrepo("Caniformia/HangGai", icon: true) (Vue/RoR / SwiftUI, collaborative) Learning app for course in BUAA, available on the #link("https://apps.apple.com/us/app/%E8%88%AA%E6%A6%82-hanggai/id1570322898?l=zh-Hans-CN")[App Store];
   ]
 
   #cventry(
-      tl: [Other Personal Projects],
+      tl: [#fa[#code.branch] Open Source Contributions],
   )[
-      - #ghrepo("roife/firefly", icon: true) (Python) Neural network training and inference framework with an MNIST classifier implemented;\
-      - #ghrepo("Caniformia/HangGai", icon: true) (RoR / SwiftUI, collaborative) Learning app for BUAA's course, available on the #link("https://apps.apple.com/us/app/%E8%88%AA%E6%A6%82-hanggai/id1570322898?l=zh-Hans-CN")[App Store];
+      - *#fa[#rust] Rust Organization* (#link("https://www.rust-lang.org/governance/teams/compiler#team-rust-analyzer-contributors", [rust-analyzer contributors team])) member, primarily maintaining #ghrepo("rust-lang/rust-analyzer", icon: true); also contributed to #ghrepo("rust-lang/rust", icon: true), #ghrepo("rust-lang/rust-clippy", icon: true), #ghrepo("rust-lang/rustup", icon: true), #ghrepo("rust-lang/rust-mode", icon: true);
+      - #ghrepo("llvm/llvm-project", icon: true), #ghrepo("clangd/vscode-clangd", icon: true), #ghrepo("zed-industries/zed", icon: true), #ghrepo("MikePopoloski/slang", icon: true), #ghrepo("google/autocxx", icon: true), #ghrepo("yuin/goldmark", icon: true), #ghrepo("moonbitlang/tree-sitter-moonbit", icon: true), #link("https://github.com/roife")[more projects on GitHub].
   ]
 
   == #fa[#laptop.code] Skills
 
     - *Programming Languages*: Not tied to any specific language. Especially proficient in C, C++, Rust, Java, Python, JavaScript/TypeScript, and Verilog/SystemVerilog; have also worked with Ruby, Swift, OCaml, Haskell, Coq, Agda, etc.
-    - *PL Theory*
-      - Solid foundation in *type theory*, formal semantics, formal languages & automata, and the theory of computation; experienced with interactive theorem provers (e.g., Coq, Agda).
+    - *Programming Language Theory*
+      - Familiar with formal semantics, formal languages, and the theory of computation; experienced with interactive theorem.
       - Knowledge of the theory and implementation of *type systems* (e.g., Hindley-Milner, System F, Dependent Types).
-      - Familiar with common *static program analysis* algorithms (e.g., data-flow analysis, CFA, IFDS, pointer analysis with varying sensitivities).
-    - *Compiler Design*: *3 YoE*, proficient in the full compiler pipeline from parsing to code generation, with an emphasis on *compiler optimizations*
-      - Experience implementing language features across multiple paradigms, including bidirectional type checking and module systems.
-      - Familiar with various *IRs* (e.g., SSA, MLIR, CPS) and optimizations across stages, such as Mem2Reg, SCEV, register allocation, etc.
-      - In-depth knowledge of LLVM and LLVM-IR; have read significant portions of its codebase and authored several analysis and optimization passes.
+    - *Static Analysis*: Familiar with *static analysis* algorithms (e.g., CFA, IFDS, pointer analysis with varying sensitivities).
+    - *Compiler Design*: *3 YoE*, proficient in the full compiler pipeline, with an emphasis on *compiler optimizations*:
+      - Experience implementing PL features across multiple paradigms, such as  bidirectional type checking and module systems.
+      - Familiar with various *IRs* (e.g., SSA, MLIR, etc.) and *optimizations* across stages (e.g., Mem2Reg, SCEV, register allocation, etc.).
+      - In-depth knowledge of *LLVM* and LLVM-IR; have implemented several analysis and optimization passes.
     - *IDE Development*: *2 YoE*. Familiar with IDE architectures based on *incremental computation* (esp. rust-analyzer and clangd); versed in the LSP and plugin development for VS Code, Emacs, and other editors.
     - *Computer Architecture*: Familiar with ARM and x86 ISAs; understanding of out-of-order execution, multi-core communication, etc.; knowledgeable about NVIDIA GPU architecture.
-    - *Development Environment*: Proficient in Emacs; comfortable working on macOS and Linux; adept at leveraging generative AI tools to enhance productivity.
+    - *Development Environment*: Proficient in Emacs; comfortable with macOS and Linux; adept at leveraging GenAI.
 
   == #fa[#th.list] Misc
 
-    - *Club*: Served as President of the Beihang OpenAtom Open Source Club, organizing multiple technical sharing and exchange events;
+    - *Club*: Served as President of #emph[the Beihang OpenAtom Open Source Club], organizing multiple technical sharing and exchange events;
+    - *Blog*: #link("https://roife.github.io")[roife.github.io] mainly focused on theoretical computer science and course notes;
     - *Languages*: Chinese (native), English.
