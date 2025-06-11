@@ -115,7 +115,9 @@
         tl: [其他个人项目],
     )[
         - #ghrepo("Caniformia/HangGai", icon: true) (Vue/RoR / SwiftUI，合作) 面向北航航概课程的学习应用，支持 Web 端/移动端，已上架 #link("https://apps.apple.com/us/app/%E8%88%AA%E6%A6%82-hanggai/id1570322898?l=zh-Hans-CN")[AppStore]；
-        - #ghrepo("roife/firefly", icon: true) (Rust) 使用类型系统约束的*神经网络训练/推理框架*，实现了卷积、全连接等算子，并实现了 MNIST 数据集分类；
+        - #ghrepo("roife/firefly", icon: true) (Rust) 使用类型系统约束的*神经网络训练/推理框架*，实现了卷积、全连接等算子，并基于此完成了 MNIST 分类；
+        - #ghrepo("roife/mole") (Verilog / MIPS) 五级流水线 CPU，完成了 *50+* 条指令及*旁路*\/*停顿*机制；实现了*协处理器* CP0 以响应*中断*\/*异常*；
+        - #ghrepo("roife/mos") (C / MIPS) 采用 *exokernel* 设计的 OS 内核，实现了内存映射、进程管理、文件系统、系统调用、Shell 等模块；
     ]
 
     #cventry(

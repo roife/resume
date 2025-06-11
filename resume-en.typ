@@ -3,7 +3,7 @@
 #show: chicv
 #set par(justify: true, leading: 0.7em)
 #show heading.where(level: 2): set text(size: 12pt)
-#set text(size: 9.7pt)
+#set text(size: 9.5pt)
 
 #let private_info = json("resume-private/private_info.json")
 #let resume_name = private_info.name_en
@@ -48,7 +48,7 @@
 
     #cventry(
         tl: [#fa[#rust] #link("https://foundation.rust-lang.org/news/announcing-the-rust-foundation-s-2024-fellows/")[Rust Foundation Fellowship Program]],
-        bl: [Rust Foudantion Fellowship (about 20 people globally)],
+        bl: [Rust Foundation Fellowship (about 20 people globally)],
         br: [Project Fellow],
         tr: [2024.09 - 2025.09]
     )[
@@ -117,8 +117,10 @@
     #cventry(
       tl: [Other Personal Projects],
   )[
-      - #ghrepo("roife/firefly", icon: true) (Rust) A simple neural network training/inference framework, implementing convolution, fully connected layers and other operators, with MNIST dataset classification implemented;
-      - #ghrepo("Caniformia/HangGai", icon: true) (Vue/RoR / SwiftUI, collaborative) Learning app for course in BUAA, available on the #link("https://apps.apple.com/us/app/%E8%88%AA%E6%A6%82-hanggai/id1570322898?l=zh-Hans-CN")[App Store];
+      - #ghrepo("Caniformia/HangGai", icon: true) (Vue/RoR / SwiftUI, collaborative) Learning app for courses in BUAA, available on the #link("https://apps.apple.com/us/app/%E8%88%AA%E6%A6%82-hanggai/id1570322898?l=zh-Hans-CN")[App Store];
+      - #ghrepo("roife/firefly", icon: true) (Rust) A simple neural network training/inference framework, implementing convolution, fully connected layers and other operators, with MNIST dataset  classification implemented;
+      - #ghrepo("roife/mole", icon: true) (Verilog / MIPS) A five-stage pipelined CPU, implementing *50+* instructions with *forwarding* and *stalling* mechanisms; also implemented coprocessor CP0 to handle *interrupts* and *exceptions*;
+      - #ghrepo("roife/mos", icon: true) (C / MIPS) An OS kernel with an *exokernel* design, implementing modules for memory mapping, process management, file system, system calls, and a shell;
   ]
 
   #cventry(
@@ -130,13 +132,13 @@
 
   == #fa[#laptop.code] Skills
 
-    - *Programming Languages*: Not tied to any specific language. Especially proficient in C, C++, Rust, Java, Python, JavaScript/TypeScript, and Verilog/SystemVerilog; have also worked with Ruby, Swift, OCaml, Haskell, Coq, Agda, etc.
+    - *Programming Languages*: Not tied to any specific language. Especially proficient in C, C++, Rust, Java, Python, JavaScript/TypeScript, Verilog/SystemVerilog, and EmacsLisp; have also worked with Ruby, Swift, OCaml, Haskell, Coq, Agda, etc.
     - *Programming Language Theory*
       - Familiar with formal semantics, formal languages, and the theory of computation; experienced with interactive theorem.
       - Knowledge of the theory and implementation of *type systems* (e.g., Hindley-Milner, System F, Dependent Types).
     - *Static Analysis*: Familiar with *static analysis* algorithms (e.g., CFA, IFDS, pointer analysis with varying sensitivities).
     - *Compiler Design*: *3 YoE*, proficient in the full compiler pipeline, with an emphasis on *compiler optimizations*:
-      - Experience implementing PL features across multiple paradigms, such as  bidirectional type checking and module systems.
+      - Experience implementing PL features across multiple paradigms, such as bidirectional type checking and module systems.
       - Familiar with various *IRs* (e.g., SSA, MLIR, etc.) and *optimizations* across stages (e.g., Mem2Reg, SCEV, register allocation, etc.).
       - In-depth knowledge of *LLVM* and LLVM-IR; have implemented several analysis and optimization passes.
     - *IDE Development*: *2 YoE*. Familiar with IDE architectures based on *incremental computation* (esp. rust-analyzer and clangd); versed in the LSP and plugin development for VS Code, Emacs, and other editors.
@@ -146,5 +148,5 @@
   == #fa[#th.list] Misc
 
     - *Club*: Served as President of #emph[the Beihang OpenAtom Open Source Club], organizing multiple technical sharing and exchange events;
-    - *Blog*: #link("https://roife.github.io")[roife.github.io] mainly focused on theoretical computer science and course notes;
+    - *Blog*: #link("https://roife.github.io")[roife.github.io] mainly focused on theoretical computer science;
     - *Languages*: Chinese (native), English.
