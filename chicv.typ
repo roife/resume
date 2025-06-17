@@ -40,7 +40,7 @@
     content
 ) = {
     block(
-        inset: (bottom: 2pt),
+        inset: (bottom: 0.3em),
         text(weight: "bold", size: 1.15em)[#tl] +
         h(1fr) + tr +
         linebreak() +
@@ -85,19 +85,19 @@
     show heading.where(
         level: 2
     ): it => text(
-        size: 13pt,
+        size: 12pt,
         font: fonts,
         weight: "bold",
         block(
-            v(0.15em) + chiline() + v(0.14em) + it + v(0.25em),
+            v(0.2em) + chiline() + v(0.14em) + it + v(0.25em),
         )
     )
-    set list(marker: ([•], [‣]))
+    set list(marker: ([•], [‣]), spacing: 0.95em)
 
     show link: it => underline(offset: 1.8pt, it)
     set page(margin: (x: 0.6cm, y: 1cm), numbering: "1 / 1")
     set par(justify: true, leading: 0.86em)
-    set text(font: fonts, size: 10pt)
+    set text(font: fonts, size: 9.8pt)
 
     body
 }
