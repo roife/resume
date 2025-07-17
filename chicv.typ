@@ -40,8 +40,8 @@
     content
 ) = {
     block(
-        inset: (bottom: 0.3em),
-        text(weight: "bold", size: 1.15em)[#tl] +
+        inset: (bottom: 0.2em),
+        text(weight: "bold", size: 1.16em)[#tl] +
         h(1fr) + tr +
         linebreak() +
         if bl != "" or br != "" {
@@ -51,7 +51,6 @@
     )
 }
 
-// submit, post
 #let redact(alter: none, mark: false, color: black, body) = {
     let level = sys.inputs.at("level", default: none);
     if level == "submit" {
@@ -89,7 +88,7 @@
         font: fonts,
         weight: "bold",
         block(
-            v(0.2em) + chiline() + v(0.14em) + it + v(0.25em),
+            v(0.2em) + chiline() + v(0.14em) + it + v(0.2em),
         )
     )
     set list(marker: ([•], [‣]), spacing: 0.95em)

@@ -2,8 +2,7 @@
 
 #show: chicv
 #set par(justify: true, leading: 0.7em)
-#set text(size: 9.5pt)
-#set list(marker: ([•], [‣]), spacing: 0.8em)
+#set list(marker: ([•], [‣]), spacing: 0.75em)
 
 #let private_info = json("resume-private/private_info.json")
 #let resume_name = private_info.name_en
@@ -126,7 +125,7 @@
       tl: [#fa[#code.branch] Open Source Contributions],
   )[
       - *#fa[#rust] Rust Organization* (#link("https://www.rust-lang.org/governance/teams/compiler#team-rust-analyzer-contributors", [rust-analyzer contributors team])) member, primarily maintaining #ghrepo("rust-lang/rust-analyzer"); also contributed to #ghrepo("rust-lang/rust"), #ghrepo("rust-lang/rust-clippy"), #ghrepo("rust-lang/rustup"), #ghrepo("rust-lang/rust-mode");
-      - #ghrepo("llvm/llvm-project"), #ghrepo("clangd/vscode-clangd"), #ghrepo("zed-industries/zed"), #ghrepo("MikePopoloski/slang"), #ghrepo("google/autocxx"), #ghrepo("yuin/goldmark"), #ghrepo("moonbitlang/tree-sitter-moonbit"), #link("https://github.com/roife")[more projects on GitHub].
+      - #ghrepo("llvm/llvm-project"), #ghrepo("clangd/vscode-clangd"), #ghrepo("MikePopoloski/slang"), #ghrepo("google/autocxx"), #ghrepo("yuin/goldmark"), #ghrepo("moonbitlang/tree-sitter-moonbit"), #link("https://github.com/roife")[more projects on GitHub].
   ]
 
   == #fa[#laptop.code] Skills

@@ -26,7 +26,7 @@
         tl: [北京航空航天大学],
         tr: [2019.09 - 2023.06],
     )[
-        本科，计算机科学与技术｜GPA: 3.84/4.00，排名前 *10%*，获得推荐免试研究生资格。 #linebreak()
+        本科，计算机科学与技术｜GPA: 3.84/4.00，排名前 *10%*；获得推荐免试研究生资格。 #linebreak()
         助教工作：*程序设计基础*（2020 秋），*面向对象设计与构建*（2021 秋，2022 春｜#link("https://scse.buaa.edu.cn/bkspy/bkspy/S_T_A_Rjftdbps_.htm")[S.T.A.R. 团队]，负责课程设计和*系统开发运维*）
     ]
 
@@ -51,8 +51,8 @@
     )[
         - 作为 #link("https://www.rust-lang.org/governance/teams/compiler#team-rust-analyzer-contributors", [#fa[#rust] *Rust-lang Organization 成员*])（rust-analyzer-contributors-team） 和 *rust-analyzer 维护者*（Rust 语言官方 IDE）之一，社区中贡献排名在*前 1%*，参与 issues 处理、PR 审核等维护工作；同时参与维护 rust 语言社区其他项目，如 rust-clippy 等；
         - 实现了控制流高亮、快照测试更新等多项功能，并参与了大量 bug 修复，增强了 IDE 在代码理解、自动生成等多方面的能力；
-        - 为项目的 unicode 断字断行模块编写了 NEON 下的 *SIMD* 实现，使该模块在 ARM 平台上提速 *6.5 倍*；
-        - v0.3.1992 *事故救火*：社区在发布小版本 4 小时后，发现该版本存在导致资源耗尽且无法结束进程的恶性 BUG。本人在 3 小时内定位到错误算法，并设计新算法解决了问题。该紧急修复控制了事故影响范围，避免影响全球 Rust 开发者的工作。
+        - 为项目的 unicode 断字断行模块编写了 NEON 下的 *SIMD* 实现，使得该模块在 ARM 平台上提速 *6.5 倍*；
+        - v0.3.1992 *事故救火*：在发布新版本 4 小时后，社区发现该版本存在导致资源耗尽且无法结束进程的恶性 BUG。本人在 3 小时内定位到错误的依赖图搜索算法，并设计新算法解决了问题。该紧急修复控制了事故影响范围，避免了影响全球 Rust 开发者的工作。
     ]
 
   == #fa[#trophy] 奖项荣誉
@@ -62,7 +62,7 @@
   - 蓝桥杯 C++ 程序设计竞赛 A 组北京赛区一等奖、国赛三等奖；
   - 另获其他各类省级奖项、校级奖项、奖学金共*十余次*。
 
-  == #fa[#project-diagram] 项目开发
+  == #fa[#project-diagram] 个人项目
 
     #cventry(
         tl: [Vizsla],
@@ -72,8 +72,7 @@
     )[
         - 实现了一套面向可综合 SystemVerilog 的*语义分析框架*以及 IDE 基础设施，旨在为芯片设计配备现代 IDE 功能；
         - 基于*增量计算*架构，设计并实现了一套增量分析 IR 和增量分析 pass，使得代码分析器无需全量更新即可得到准确的分析结果；
-        - 项目在功能、性能与可用性等指标上均达到*业界先进水平*：已完成面向 SystemVerilog 的代码导航定位、语义重构、代码补全、语义高亮、代码诊断等*数十项*现代 IDE 特性，并能够利用增量语义分析在各项功能上做到*毫秒级*延迟；
-        - 基于语言服务器协议，适配 VS Code、Emacs、NeoVim 等主流编辑器。
+        - 项目在功能、性能等指标上均达到*业界先进水平*：已完成面向 SystemVerilog 的代码导航、语义重构、代码补全、诊断等*数十项*现代 IDE 特性，并能够利用增量语义分析在各项功能上做到*毫秒级*延迟；基于语言服务器协议，适配 VS Code、Emacs 等主流编辑器；
     ]
 
     #cventry(
@@ -83,8 +82,7 @@
         tr: [#ghrepo("roife/ailurus")],
     )[
         - 基于 *Martin-Löf 类型论*；支持 *dependent type*、dependent pattern matching、inductive datatype 等特性。实现了 propositional equality，使用 Normalization by Evaluation 进行等价检查，可实现简单的定理证明；
-        - 采用基于 *typeclass* 的 ad-hoc polymorphism，并基于此实现了*运算符重载*，实现了灵活的代码复用机制；
-        - 实现了 *module system*，支持代码的命名空间管理和封装隔离，解决大型项目中的代码组织和依赖管理问题；
+        - 采用基于 *typeclass* 的 ad-hoc polymorphism，并基于此实现了*运算符重载*；实现了 *module system*，支持代码的命名空间和封装；
         - 旨在作为实验平台，探索现代编程语言工具链（如编译器、IDE 等）的协同设计架构，提高编程语言开发的效率和可维护性。
     ]
 
@@ -105,7 +103,7 @@
         br: [C++ / LLVM-IR],
         tr: ghrepo("roife/llvm-lite"),
     )[
-        - 课题旨在利用端侧推理设备已知的*形状信息*，对深度学习算子进行*二次编译优化*，以减少算子运行时的时空开销；
+        - 课题旨在利用端侧推理设备已知的形状信息，对深度学习算子进行*二次编译优化*，以减少算子运行时的时空开销；
         - 项目包含运行在推理设备的 LLVM IR *轻量编译器*和对 LLVM Codegen 模块的*裁剪工作*。针对目标 workloads，优化器选择性实现了*SCCP*、*DCE*等优化，裁剪工作移除了无关支持，且只保留必要优化，从而以最小的开销取得最好的优化结果；
         - 毕业设计获得*优秀*评价。成功将 conv2d 算子和 softmax 算子的推理时间降低 *6%*，并将生成的二进制目标文件减小 *38%*；
     ]
@@ -123,7 +121,7 @@
         tl: [#fa[#code.branch] 开源社区贡献],
     )[
         - *#fa[#rust]* 负责维护官方 IDE（语言服务器）#ghrepo("rust-lang/rust-analyzer")；在 rust 社区也贡献过 #ghrepo("rust-lang/rust")，#ghrepo("rust-lang/rust-clippy")，#ghrepo("rust-lang/rustup")，#ghrepo("rust-lang/rust-mode") 等项目；
-        - #ghrepo("llvm/llvm-project")，#ghrepo("clangd/vscode-clangd")，#ghrepo("zed-industries/zed")，#ghrepo("MikePopoloski/slang"), #ghrepo("google/autocxx")，#ghrepo("yuin/goldmark"), #ghrepo("moonbitlang/tree-sitter-moonbit")，更多项目见 #link("https://github.com/roife")[GitHub]。
+        - #ghrepo("llvm/llvm-project")，#ghrepo("clangd/vscode-clangd")，#ghrepo("MikePopoloski/slang"), #ghrepo("google/autocxx")，#ghrepo("yuin/goldmark"), #ghrepo("moonbitlang/tree-sitter-moonbit")，更多项目见 #link("https://github.com/roife")[GitHub]。
     ]
 
   == #fa[#laptop.code] 专业技能
@@ -131,26 +129,25 @@
     #grid(
         columns: (auto, auto),
         align: (right, left),
-        row-gutter: 10pt,
-        gutter: 9pt,
+        row-gutter: 11pt,
+        gutter: 8pt,
         [*编程语言*], [能力不局限于特定编程语言。熟悉 C, C++, Rust, Java, Python, JavsScript/TypeScript, Verilog/SystemVerilog, EmacsLisp；学习并使用过 Ruby, Swift, OCaml, Haskell, Coq, Agda 等；],
         [*程序语言理论*], [#list(marker: [‣],
-            [类型论、形式语义、形式语言与自动机、可计算性等理论；学习过 Coq、Agda 等定理证明器的使用；],
-            [Hindley-Milner, System F, Dependent Type 等*类型系统*的理论和实现；],
+            [形式语义、类型论、计算模型、形式语言与自动机等理论基础；学习过 Coq、Agda 等定理证明器的使用；],
+            [（*类型系统*）Hindley-Milner, Subtyping, System F, Dependent Type 等类型系统的理论和实现；],
+            [（*静态分析*）数据流分析、控制流分析、IFDS、采用不同敏感度的*指针分析*等常用分析算法],
         )],
-        [*编译器设计*], [*3 年经验*。编译器从语法解析到代码生成的*全 pipeline 开发*，尤其熟悉*编译优化*和*LLVM*：
+        [*编译器设计*], [*3 年经验*。精通编译器从语法解析到代码生成的*全 pipeline 开发*，熟悉多种 *IR*（SSA, CPS 等）：
             #list(marker: [‣],
-                [面向对象、函数式等多种范式编程语言的编译过程，以及双向类型检查等编程语言特性的实现；],
-                [多种 *IR*（SSA, MLIR, CPS 等）、*优化*（Mem2Reg、GVN、寄存器分配等）；熟悉 *LLVM* 上的分析/优化开发；],
+                [面向对象、函数式等多种范式语言的编译过程，以及双向类型检查等语言特性的实现；],
+                [（*编译优化*）Mem2Reg, GVN, RegAlloc, InstSchedule 等优化；熟悉 LLVM-IR/MLIR 以及 *LLVM* 优化开发；],
             )],
-        [*程序分析*], [常见*静态分析*算法（数据流分析、控制流分析、IFDS、采用不同敏感度的*指针分析*等）],
         [*语言工具链*], [
             #list(marker: [‣],
-                [*IDE 开发 2 年经验*。熟悉基于*增量计算*的 IDE 架构，尤其熟悉 rust-analyzer 和 clangd 的架构和实现；],
-                [熟悉语言服务器协议（LSP，Language Server Protocol）和 VS Code 等编辑器的编程语言插件开发；],
+                [(*IDE* 开发) *2 年经验*。基于*增量计算*的 IDE 架构，尤其熟悉 rust-analyzer 和 clangd 的架构和内部实现；语言服务器协议（Language Server Protocol）和 VS Code 等编辑器的编程语言插件开发；]
             )
         ],
-        [*体系结构*], [ARM, X86 等常见指令集的架构，现代处理器的架构和乱序执行等概念；NVIDIA GPU 架构；],
+        [*体系结构*], [ARM, X86 等常见指令集的架构，了解现代处理器的架构和乱序执行等概念；了解 NVIDIA GPU 架构；],
         [*应用开发*], [
             #list(marker: [‣],
                 [Ruby on Rails, Django 等 Web 后端框架，和使用 SwiftUI 的 iOS 应用开发；],
@@ -161,7 +158,6 @@
 
   == #fa[#th.list] 其他
 
-    - *社团工作*：曾担任北航开放原子开源社团的社长，组织过多次技术分享和交流活动；
+    - *社团工作*：曾担任北航开放原子开源社团的社长，组织过多次技术分享和企业交流活动；
     - *技术博客*：#link("https://roife.github.io")[roife.github.io] 创作时间超 5 年，主要内容为理论计算机和课程笔记，曾帮助大量同学完成 lab，月访问量逾 1.5k；
     - *外语*：英语。
-
