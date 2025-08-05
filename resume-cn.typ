@@ -155,16 +155,11 @@
                 [（*优化加速*）*OpenMP*, *CUDA* 等并行计算模型；SSE, AVX, NEON 等常见处理器架构的 SIMD 指令及应用；],
             )
         ],
-        [*应用开发*], [
-            #list(marker: [‣],
-                [Ruby on Rails, Django 等 Web 后端框架；使用 SwiftUI 的 iOS 应用开发；],
-                [PostgreSQL、Redis 等数据库的使用和数据库设计；Docker 和 CI/CD 配置等 DevOps 工作；],
-            )],
         [*开发环境*], [熟悉 Emacs / VS Code，习惯在 macOS / Linux 下工作；熟练使用生成式 AI 工具（如 GitHub Copilot）提高效率。],
     )
 
   == #fa[#th.list] 其他
 
-    - *社团工作*：曾担任北航*开放原子开源社团*的社长，组织过多次技术分享和企业交流活动；
+    - *社团工作*：曾担任北航开放原子开源社团的社长，组织过多次技术分享和企业交流活动；
     - *技术博客*：#link("https://roife.github.io")[roife.github.io] 创作时间超 5 年，主要内容为理论计算机和课程笔记，曾帮助大量同学完成 lab，月访问量逾 1.5k；
     - *外语*：英语。
