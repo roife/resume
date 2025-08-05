@@ -38,9 +38,10 @@
         br: [GPU 编译器 LLVM 后端实习生],
         tr: [2025.02 - 至今]
     )[
-        - 参与统一 NVIDIA GPU 图形编译器与 NVVM 的访存指令向量化器，使得图形编译器的向量化器与 LLVM 上游保持一致：
-          - 基于 LLVM GPU 访存向量化器的核心算法设计了多地址图形访存指令的编码方案，为多条图形访存指令实现了引用分析和向量化，同时确保尽可能减小代码库与上游代码的差异，减小后续维护成本；
-          - 添加了多个 GPU 访存指令向量化相关的优化，包括非规则访存序列向量化、整数地址向量化的支持等；参与实现了新的访存指令对齐宽度推测 pass，提升向量化器的优化效果，同时减小了代码库的耦合度；
+        - 主导了 NVIDIA GPU 图形编译器与 NVVM 的访存指令*向量化器*的合并，旨在对齐 LLVM 上游并消除长期维护分支：
+          - 为了支持图形访存指令，独立设计了*多地址图形访存指令*的编码方案，以复用 LLVM 访存向量化器的核心流程，并为多地址指令实现了*引用分析*的支持；这个过程在确保与 LLVM 上游差异最小化的同时，将图形向量化的开销降低了 *30%*；
+          - 实现了*十余个*图形访存指令向量化相关的*优化*，包括*非规则访存序列填充*、支持*整数地址向量化*等，将其优化效果提升了 *130%*；改进了 NVVM 向量化器中*推断访存指令对齐*的算法，将向量化成功率提升了 *20%*；
+        - 参与图形编译器维护，修复了数个向量化器相关的 bug；其中，修复了因 SCEV 求解出错导致的 panic，提高了驱动稳定性。
     ]
 
     #cventry(
@@ -52,7 +53,7 @@
         - 作为 #link("https://www.rust-lang.org/governance/teams/compiler#team-rust-analyzer-contributors", [#fa[#rust] *Rust-lang Organization 成员*])（rust-analyzer-contributors-team） 和 *rust-analyzer 维护者*（Rust 语言官方 IDE）之一，社区中贡献排名在*前 1%*，参与 issues 处理、PR 审核等维护工作；同时参与维护 rust 语言社区其他项目，如 rust-clippy 等；
         - 实现了控制流高亮、快照测试更新等多项功能，并参与了大量 bug 修复，增强了 IDE 在代码理解、自动生成等多方面的能力；
         - 为项目的 unicode 断字断行模块编写了 NEON 下的 *SIMD* 实现，使得该模块在 ARM 平台上提速 *6.5 倍*；
-        - v0.3.1992 *事故救火*：在发布新版本 4 小时后，社区发现该版本存在导致资源耗尽且无法结束进程的恶性 BUG。本人在 3 小时内定位到错误的依赖图搜索算法，并设计新算法解决了问题。该紧急修复控制了事故影响范围，避免了影响全球 Rust 开发者的工作。
+        - v0.3.1992 *事故救火*：在发布新版本 4 小时后，社区发现该版本存在导致资源耗尽且无法结束进程的恶性 BUG。本人在 *3 小时内*定位到错误的依赖图搜索算法，并*设计新算法*解决了问题。该紧急修复控制了事故影响范围，避免了影响全球 Rust 开发者的工作。
     ]
 
   == #fa[#trophy] 奖项荣誉
@@ -93,7 +94,7 @@
          tr: ghrepo("No-SF-Work/ayame"),
      )[
          - 合作项目，个人主要负责编写面向 Machine IR 和体系结构的后端优化和代码生成，完成了基于图着色的*迭代寄存器合并*算法、*指令调度*、*死代码删除*、窥孔优化等，同时参与了部分语法树模块的编写；
-         - 同时负责项目的测试和 DevOps，利用 docker 和 GitLab CI 搭建了测试评估流程，并编写了 Python 脚本自动分析测试结果；
+         - 同时负责项目的测试和 DevOps，利用 docker 和 GitLab CI 搭建了测试流程，并编写了 Python 脚本自动分析测试结果；
          - 项目从零开始，完成了从语法解析到代码生成的完整编译器 pipeline，编写了大量 SSA IR 与 Machine IR 上的优化，最终在比赛中获一等奖。本项目在比赛中总排名第二，在*近一半样例上排名第一*，并在 1/3 的样例上优化效果超越 `gcc -O3` 与 `clang -O3`。
     ]
 
@@ -133,31 +134,37 @@
         gutter: 8pt,
         [*编程语言*], [能力不局限于特定编程语言。熟悉 C, C++, Rust, Java, Python, JavsScript/TypeScript, Verilog/SystemVerilog, EmacsLisp；学习并使用过 Ruby, Swift, OCaml, Haskell, Coq, Agda 等；],
         [*程序语言理论*], [#list(marker: [‣],
-            [形式语义、类型论、计算模型、形式语言与自动机等理论基础；学习过 Coq、Agda 等定理证明器的使用；],
+            [形式语义、类型论、计算模型、自动机等基础理论；学习过 Coq、Agda 等定理证明器的使用；],
             [（*类型系统*）Hindley-Milner, Subtyping, System F, Dependent Type 等类型系统的理论和实现；],
             [（*静态分析*）数据流分析、控制流分析、IFDS、采用不同敏感度的*指针分析*等常用分析算法],
         )],
         [*编译器设计*], [*3 年经验*。精通编译器从语法解析到代码生成的*全 pipeline 开发*，熟悉多种 *IR*（SSA, CPS 等）：
             #list(marker: [‣],
-                [面向对象、函数式等多种范式语言的编译过程，以及双向类型检查等语言特性的实现；],
-                [（*编译优化*）Mem2Reg, GVN, RegAlloc, InstSchedule 等优化；熟悉 LLVM-IR/MLIR 以及 *LLVM* 优化开发；],
+                [（*语言实现*）面向对象、函数式等多种范式语言的编译过程，以及双向类型检查等语言特性的实现；],
+                [（*编译优化*）中后端相关分析和优化，包括 Mem2Reg, GVN, RegAlloc 等；熟悉 LLVM-IR/MLIR 以及 *LLVM*；],
             )],
-        [*语言工具链*], [
+        [*语言工具链*], [*2 年经验*。精通 IDE 的语言分析核心实现：
             #list(marker: [‣],
-                [(*IDE* 开发) *2 年经验*。基于*增量计算*的 IDE 架构，尤其熟悉 rust-analyzer 和 clangd 的架构和内部实现；语言服务器协议（Language Server Protocol）和 VS Code 等编辑器的编程语言插件开发；]
+                [（*IDE*）基于*增量计算*的 IDE 架构，语言服务器协议，编辑器插件开发；尤其熟悉 rust-analyzer 和 clangd；],
             )
         ],
-        [*体系结构*], [ARM, X86 等常见指令集的架构，了解现代处理器的架构和乱序执行等概念；了解 NVIDIA GPU 架构；],
+        [*高性能计算*], [
+            #list(marker: [‣],
+                [X86 和 ARM 指令集架构；超标量处理器的架构和现代存储架构；了解 NVIDIA GPU 的架构；],
+                [（*性能分析*）*NVIDIA Nsight*, *Intel VTune Profiler* 等性能分析工具的使用；],
+                [（*优化加速*）*OpenMP*, *CUDA* 等并行计算模型；SSE, AVX, NEON 等常见处理器架构的 SIMD 指令及应用；],
+            )
+        ],
         [*应用开发*], [
             #list(marker: [‣],
-                [Ruby on Rails, Django 等 Web 后端框架，和使用 SwiftUI 的 iOS 应用开发；],
+                [Ruby on Rails, Django 等 Web 后端框架；使用 SwiftUI 的 iOS 应用开发；],
                 [PostgreSQL、Redis 等数据库的使用和数据库设计；Docker 和 CI/CD 配置等 DevOps 工作；],
             )],
-        [*开发环境*], [熟悉 Emacs 与 VS Code，习惯在 macOS / Linux 下工作；能熟练使用生成式 AI 工具提高工作效率。],
+        [*开发环境*], [熟悉 Emacs / VS Code，习惯在 macOS / Linux 下工作；熟练使用生成式 AI 工具（如 GitHub Copilot）提高效率。],
     )
 
   == #fa[#th.list] 其他
 
-    - *社团工作*：曾担任北航开放原子开源社团的社长，组织过多次技术分享和企业交流活动；
+    - *社团工作*：曾担任北航*开放原子开源社团*的社长，组织过多次技术分享和企业交流活动；
     - *技术博客*：#link("https://roife.github.io")[roife.github.io] 创作时间超 5 年，主要内容为理论计算机和课程笔记，曾帮助大量同学完成 lab，月访问量逾 1.5k；
     - *外语*：英语。
