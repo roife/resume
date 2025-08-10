@@ -41,7 +41,7 @@
         - 主导了 NVIDIA GPU 图形编译器与 NVVM 的访存指令*向量化器*的合并，旨在对齐 LLVM 上游并消除长期维护分支：
           - 为了支持图形访存指令，独立设计了*多地址图形访存指令*的编码方案，以复用 LLVM 访存向量化器的核心流程，并为多地址指令实现了*引用分析*的支持；这个过程在确保与 LLVM 上游差异最小化的同时，将图形向量化的开销降低了 *30%*；
           - 实现了*十余个*图形访存指令向量化相关的*优化*，包括*非规则访存序列填充*、支持*整数地址向量化*等，将其优化效果提升了 *130%*；改进了 NVVM 向量化器中*推断访存指令对齐*的算法，将向量化成功率提升了 *20%*；
-        - 参与图形编译器维护，修复了数个向量化器相关的 bug；其中，修复了因 SCEV 求解出错导致的 panic，提高了驱动稳定性。
+        - 参与图形编译器维护，修复了数个 Vectorization, SpeculativelySink, SCEV 等优化的 bug；
     ]
 
     #cventry(
@@ -133,28 +133,22 @@
         row-gutter: 11pt,
         gutter: 8pt,
         [*编程语言*], [能力不局限于特定编程语言。熟悉 C, C++, Rust, Java, Python, JavsScript/TypeScript, Verilog/SystemVerilog, EmacsLisp；学习并使用过 Ruby, Swift, OCaml, Haskell, Coq, Agda 等；],
-        [*程序语言理论*], [#list(marker: [‣],
-            [形式语义、类型论、计算模型、自动机等基础理论；学习过 Coq、Agda 等定理证明器的使用；],
-            [（*类型系统*）Hindley-Milner, Subtyping, System F, Dependent Type 等类型系统的理论和实现；],
-            [（*静态分析*）数据流分析、控制流分析、IFDS、采用不同敏感度的*指针分析*等常用分析算法],
-        )],
-        [*编译器设计*], [*3 年经验*。精通编译器从语法解析到代码生成的*全 pipeline 开发*，熟悉多种 *IR*（SSA, CPS 等）：
-            #list(marker: [‣],
-                [（*语言实现*）面向对象、函数式等多种范式语言的编译过程，以及双向类型检查等语言特性的实现；],
-                [（*编译优化*）中后端相关分析和优化，包括 Mem2Reg, GVN, RegAlloc 等；熟悉 LLVM-IR/MLIR 以及 *LLVM*；],
-            )],
-        [*语言工具链*], [*2 年经验*。精通 IDE 的语言分析核心实现：
-            #list(marker: [‣],
-                [（*IDE*）基于*增量计算*的 IDE 架构，语言服务器协议，编辑器插件开发；尤其熟悉 rust-analyzer 和 clangd；],
-            )
+        [*程序语言理论*], [
+            - 形式语义、类型论、计算模型、自动机等基础理论；学习过 Coq、Agda 等定理证明器的使用；
+            - （*类型系统*）Hindley-Milner, Subtyping, System F, Dependent Type 等类型系统的理论和实现；
+            - （*静态分析*）数据流分析、控制流分析、IFDS、采用不同敏感度的*指针分析*等常用分析算法
+        ],
+        [*编译器设计*], [*3 年经验*。精通编译器从语法解析到代码生成的*全 pipeline 开发*，熟悉多种 *IR*（ANF, SSA, CPS 等）：
+            - （*语言实现*）面向对象、函数式等多种范式语言的编译过程，以及双向类型检查等语言特性的实现；
+            - （*IDE 开发*） *2 年经验*，基于*增量计算*和 *LSP* 的 IDE 架构，编辑器插件开发；熟悉 rust-analyzer 和 clangd；
+            - （*编译优化*）编译器中端、后端的分析和优化，包括 Mem2Reg, GVN, RegAlloc, List Scheduling 等；熟悉 *LLVM* 上的分析优化实现和代码库，熟悉 LLVM-IR 与 MLIR；
         ],
         [*高性能计算*], [
-            #list(marker: [‣],
-                [X86 和 ARM 指令集架构；超标量处理器的架构和现代存储架构；了解 NVIDIA GPU 的架构；],
-                [（*性能分析*）*NVIDIA Nsight*, *Intel VTune Profiler* 等性能分析工具的使用；],
-                [（*优化加速*）*OpenMP*, *CUDA* 等并行计算模型；SSE, AVX, NEON 等常见处理器架构的 SIMD 指令及应用；],
-            )
+            - X86 和 ARM 指令集架构；了解超标量处理器的架构和现代存储架构；了解 NVIDIA GPU 的架构；
+            - （*性能分析*）NVIDIA Nsight, Intel VTune Profiler 等性能分析工具的使用；
+            - （*优化加速*）了解 *OpenMP*, *CUDA* 等并行计算模型；SSE, AVX, NEON 等常见的 SIMD 架构及应用；
         ],
+        [*应用开发*], [Ruby on Rails, Django, SwiftUI 等开发框架；PostgreSQL、Redis 等数据库；Docker 和 CI/CD 配置等 DevOps 工作；],
         [*开发环境*], [熟悉 Emacs / VS Code，习惯在 macOS / Linux 下工作；熟练使用生成式 AI 工具（如 GitHub Copilot）提高效率。],
     )
 
@@ -163,3 +157,5 @@
     - *社团工作*：曾担任北航开放原子开源社团的社长，组织过多次技术分享和企业交流活动；
     - *技术博客*：#link("https://roife.github.io")[roife.github.io] 创作时间超 5 年，主要内容为理论计算机和课程笔记，曾帮助大量同学完成 lab，月访问量逾 1.5k；
     - *外语*：英语。
+    - *Talks*：
+      - _Inside rust-analyzer: from Incremental Computation to Modern IDE_ (RustChinaConf 2025)
