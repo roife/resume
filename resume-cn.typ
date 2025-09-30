@@ -26,8 +26,8 @@
         tl: [北京航空航天大学],
         tr: [2019.09 - 2023.06],
     )[
-        本科，计算机科学与技术｜GPA: 3.84/4.00，排名前 *10%*；获得推荐免试研究生资格。 #linebreak()
-        助教工作：*程序设计基础*（2020 秋），*面向对象设计与构建*（2021 秋，2022 春｜#link("https://scse.buaa.edu.cn/bkspy/bkspy/S_T_A_Rjftdbps_.htm")[S.T.A.R. 团队]，负责课程设计和*系统开发运维*）
+        本科，计算机科学与技术｜GPA: 3.84/4.00，排名前 *10%*；获得推荐免试研究生资格｜获本科生*国家奖学金*，*优秀毕业生*等十余项奖项。#linebreak()
+        助教工作：*程序设计基础*（2020 秋），*面向对象设计与构建*（2021 秋，2022 春｜#link("https://scse.buaa.edu.cn/bkspy/bkspy/S_T_A_Rjftdbps_.htm")[S.T.A.R. 团队]）
     ]
 
   == #fa[#briefcase] 工作经历
@@ -38,10 +38,12 @@
         br: [GPU 编译器 LLVM 后端实习生],
         tr: [2025.02 - 至今]
     )[
-        - 主导了 NVIDIA GPU 图形编译器与 NVVM 的访存指令*向量化器*的合并，旨在对齐 LLVM 上游并消除长期维护分支：
-          - 为了支持图形访存指令，独立设计了*多地址图形访存指令*的编码方案，以复用 LLVM 访存向量化器的核心流程，并为多地址指令实现了*引用分析*的支持；这个过程在确保与 LLVM 上游差异最小化的同时，降低向量化的开销；
-          - 改进了 NVVM 向量化器中*推断访存指令对齐*的算法，并实现了*十余个*图形访存指令向量化相关的*优化*，包括*非规则访存序列填充*、支持*整数地址向量化*等，将向量化成功率提升了 *40%*；
-        - 参与图形编译器维护，修复了数个 Vectorization, SpeculativelySink, SCEV 等优化的 bug；
+        - 主导了 NVIDIA GPU 图形编译器与 NVVM 的访存指令 *vectorizer* 的合并，旨在对齐 LLVM 上游并降低维护开销：
+          - 为了支持图形访存指令，独立设计了*多地址图形访存指令*的编码方案，以复用 LLVM 访存向量化器的核心流程；
+          - 为图形指令添加 alias analysis 的支持，深入分析 BasicAA 和 SCEVAA 以支持新 intrinsics；
+          - 改进了 LLVM 的 alignment inference 算法，通过对 SCEV 求解最大公约数，以支持对循环迭代变量的对齐推断；
+          - 实现了*十余个*图形访存指令向量化相关的*优化*，包括*非规则访存序列填充*、支持*整数地址向量化*等，将向量化成功率提升了 *40%*；
+        - 参与图形编译器维护，修复了数个 Vectorization, SCEV 等优化的 bug；
     ]
 
     #cventry(
@@ -55,13 +57,6 @@
         - 为项目的 unicode 断字断行模块编写了 NEON 下的 *SIMD* 实现，使得该模块在 ARM 平台上提速 *6.5 倍*；
         - v0.3.1992 *事故救火*：在发布新版本 4 小时后，社区发现该版本存在导致资源耗尽且无法结束进程的恶性 BUG。本人在 *3 小时内*定位到错误的依赖图搜索算法，并*设计新算法*解决了问题。该紧急修复控制了事故影响范围，避免了影响全球 Rust 开发者的工作。
     ]
-
-  == #fa[#trophy] 奖项荣誉
-
-  - 2022 年本科生*国家奖学金*（该学年成绩排名 1/195）；北京航空航天大学优秀毕业生；
-  - 2021 年全国大学生计算机系统能力大赛 · *编译系统设计赛*（华为毕昇杯）*一等奖*，总排名第二；
-  - 蓝桥杯 C++ 程序设计竞赛 A 组北京赛区一等奖、国赛三等奖；
-  - 另获其他各类省级奖项、校级奖项、奖学金共*十余次*。
 
   == #fa[#project-diagram] 个人项目
 
@@ -89,34 +84,15 @@
 
     #cventry(
          tl: [Ayame],
-         bl: [SysY（C 子集）到 ARMv7 的编译器 · 毕昇杯比赛项目],
+         bl: [SysY（C 子集）到 ARMv7 的编译器 · 全国大学生系统能力竞赛（编译器设计）比赛项目],
          br: [Java / LLVM-IR / ARM],
          tr: ghrepo("No-SF-Work/ayame"),
      )[
-         - 合作项目，个人主要负责编写面向 Machine IR 和体系结构的后端优化和代码生成，完成了基于图着色的*迭代寄存器合并*算法、*指令调度*、*死代码删除*、窥孔优化等，同时参与了部分语法树模块的编写；
+         - 合作项目，个人主要负责编写面向 Machine IR 和体系结构的后端优化和代码生成，完成了基于图着色的*迭代寄存器合并*算法、*指令调度*、*死代码删除*、窥孔优化等，同时参与了部分块的编写；
          - 同时负责项目的测试和 DevOps，利用 docker 和 GitLab CI 搭建了测试流程，并编写了 Python 脚本自动分析测试结果；
          - 项目从零开始，完成了从语法解析到代码生成的完整编译器 pipeline，编写了大量 SSA IR 与 Machine IR 上的优化，最终在比赛中获一等奖。本项目在比赛中总排名第二，在*近一半样例上排名第一*，并在 1/3 的样例上优化效果超越 `gcc -O3` 与 `clang -O3`。
     ]
 
-    #cventry(
-        tl: [LLVM-Lite],
-        bl: [面向深度学习神经网络算子的轻量端侧编译器 · 本科毕设课题],
-        br: [C++ / LLVM-IR],
-        tr: ghrepo("roife/llvm-lite"),
-    )[
-        - 课题旨在利用端侧推理设备已知的形状信息，对深度学习算子进行*二次编译优化*，以减少算子运行时的时空开销；
-        - 项目包含运行在推理设备的 LLVM IR *轻量编译器*和对 LLVM Codegen 模块的*裁剪工作*。针对目标 workloads，优化器选择性实现了*SCCP*、*DCE*等优化，裁剪工作移除了无关支持，且只保留必要优化，从而以最小的开销取得最好的优化结果；
-        - 毕业设计获得*优秀*评价。成功将 conv2d 算子和 softmax 算子的推理时间降低 *6%*，并将生成的二进制目标文件减小 *38%*；
-    ]
-
-    #cventry(
-        tl: [其他个人项目],
-    )[
-        - #ghrepo("Caniformia/HangGai") (Vue/RoR / SwiftUI，合作) 面向北航航概课程的学习应用，支持 Web 端/移动端，已上架 #link("https://apps.apple.com/us/app/%E8%88%AA%E6%A6%82-hanggai/id1570322898?l=zh-Hans-CN")[AppStore]；
-        - #ghrepo("roife/firefly") (Rust) 使用类型系统约束的*神经网络训练/推理框架*，实现了卷积、全连接等算子，并完成了 MNIST 分类；
-        - #ghrepo("roife/mole") (Verilog / MIPS) 五级流水线 CPU，完成了 *50+* 条指令及*转发*\/*停顿*机制；实现了协处理器 CP0 以响应*中断*\/*异常*；
-        - #ghrepo("roife/mos") (C / MIPS) 采用 *exokernel* 的 OS 内核，从 bootloader 开始实现了内存映射、进程调度、文件系统、系统调用、Shell 等；
-    ]
 
     #cventry(
         tl: [#fa[#code.branch] 开源社区贡献],
@@ -154,8 +130,5 @@
 
   == #fa[#th.list] 其他
 
-    - *社团工作*：曾担任北航开放原子开源社团的社长，组织过多次技术分享和企业交流活动；
-    - *技术博客*：#link("https://roife.github.io")[roife.github.io] 创作时间超 5 年，主要内容为理论计算机和课程笔记，曾帮助大量同学完成 lab，月访问量逾 1.5k；
-    - *外语*：英语。
     - *Talks*：
-      - _Inside rust-analyzer: from Incremental Computation to Modern IDE_ (RustChinaConf 2025)
+      - _Exploring rust-analyzer: from Incremental Computation to Modern IDE_ (RustChinaConf 2025)
