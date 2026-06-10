@@ -68,12 +68,12 @@
   == #fa[#project-diagram] 个人项目
 
     #cventry(
-        tl: [Vizsla],
+        tl: [VIDE],
         bl: [面向芯片前端设计的现代化 IDE · 硕士毕设项目],
         br: [Rust / SystemVerilog],
-        tr: [#ghrepo("roife/vizsla") (WIP)],
+        tr: [#link("https://vide.pascal-lab.net")[VIDE]],
     )[
-        - 实现了一套面向可综合 SystemVerilog 的*语义分析框架*以及 IDE 基础设施，旨在为芯片设计配备现代 IDE 功能；
+        - 实现了一套面向 SystemVerilog 的*语义分析框架*以及 IDE 基础设施，旨在为芯片设计配备现代 IDE 功能；
         - 基于*增量计算*架构，设计并实现了一套增量分析 IR 和增量分析 pass，使得代码分析器无需全量更新即可得到准确的分析结果；
         - 项目在功能、性能等指标上均达到*业界先进水平*：已完成面向 SystemVerilog 的代码导航、语义重构、代码补全等*十余项*现代 IDE 特性，并能够利用增量语义分析在各项功能上做到*毫秒级*延迟；基于语言服务器协议，适配 VS Code、Emacs 等主流编辑器；
     ]
