@@ -2,7 +2,7 @@
 
 #show: chicv
 #set par(justify: true, leading: 0.7em)
-#set list(marker: ([•], [‣]), spacing: 0.75em)
+#set list(marker: ([•], [‣]), spacing: 0.65em)
 
 #let private_info = json("resume-private/private_info.json")
 #let resume_name = private_info.name_en
@@ -21,15 +21,15 @@
         tl: [Nanjing University],
         tr: [2023.09 - 2026.06 (expected)],
     )[
-      Master's Degree in #emph[Computer Science and Technology] | #link("https://pascal-lab.net")[PASCAL Lab]. Advisor: #redact(mark: true)[Yue] Li | Research focus on *PL* and *Program Analysis*. #linebreak()
+      M.S. in #emph[Computer Science and Technology] | #link("https://pascal-lab.net")[PASCAL Lab]. Advisor: #redact(mark: true)[Yue] Li | Research: *PL* and *program analysis*. #linebreak()
       Teaching Assistant: *Principles and Techniques of Compilers* (Spring 2024)
     ]
     #cventry(
         tl: [Beihang University],
         tr: [2019.09 - 2023.06],
     )[
-        Bachelor's Degree in #emph[Computer Science and Technology] | GPA 3.84/4.00; awarded *National Scholarship*, *Outstanding Graduate*, and First Prize in the 2021 #link("https://compiler.educg.net")[NSCSCC Compilation System Design Competition]. #linebreak()
-        Teaching Assistant: *Programming in Practice* (Fall 2020), *Object-oriented Design and Construction* (Fall 2021, Spring 2022)
+        B.S. in #emph[Computer Science and Technology] | GPA: 3.84/4.00; awarded *National Scholarship*, *Outstanding Graduate*, and First Prize in the 2021 #link("https://compiler.educg.net")[NSCSCC Compilation System Design Competition]. #linebreak()
+        Teaching Assistant: *Programming in Practice* (Fall 2020), *Object-Oriented Design and Construction* (Fall 2021, Spring 2022)
     ]
 
   == #fa[#briefcase] Work Experience
@@ -47,12 +47,12 @@
         br: [GPU Compiler LLVM Backend Intern],
         tr: [2025.02 - 2025.10]
     )[
-        - Led the integration of the memory instruction vectorizer between the NVIDIA GPU graphics compiler and NVVM to align with LLVM upstream and reduce maintenance overhead:
-          - Designed an encoding scheme for *multi-address graphics memory instructions* to reuse LLVM's memory-access vectorization pipeline;
-          - Added alias analysis support for graphics instructions, including detailed analysis of BasicAA and SCEVAA to support new intrinsics;
-          - Improved LLVM's alignment inference by solving GCDs of SCEV expressions to infer alignment for loop induction variables;
-          - Implemented *more than 10* vectorization optimizations for graphics memory instructions, including *irregular access sequence padding*, improving vectorization success rate by *40%*;
-        - Contributed to graphics compiler maintenance, fixing multiple bugs in Vectorization and SCEV optimizations;
+        - Merged NVIDIA GPU graphics and NVVM memory-instruction *vectorizers*, aligning with LLVM upstream:
+          - Encoded *multi-address graphics memory instructions* to reuse LLVM memory-vectorizer logic;
+          - Added graphics-instruction alias analysis by tracing BasicAA and SCEVAA behavior on new intrinsics;
+          - Improved LLVM alignment inference by solving GCDs over SCEV expressions for loop induction variables;
+          - Implemented *10+* graphics-memory vectorization optimizations, including *irregular access sequence padding*, raising vectorization success rate by *40%*;
+        - Maintained the graphics compiler and fixed bugs in Vectorization, SCEV, and related optimizations;
     ]
 
     #cventry(
@@ -61,10 +61,10 @@
         br: [Project Fellow],
         tr: [2024.09 - 2025.09]
     )[
-        - Member of the #link("https://www.rust-lang.org/governance/teams/compiler#team-rust-analyzer-contributors", [#fa[#rust] *Rust-lang Organization*]) (rust-analyzer-contributors-team) and a *maintainer* of the official Rust IDE #ghrepo("rust-lang/rust-analyzer", icon: false), ranked in the *top 1%* of contributors; handled issues and PR reviews, and helped maintain other Rust community projects such as rust-clippy;
-        - Delivered features such as control-flow highlighting and snapshot-test updates, and resolved numerous bugs to improve code understanding and code generation;
-        - Implemented a *SIMD* NEON version of the Unicode line-breaking module, achieving a *6.5x* speedup on ARM;
-        - *Incident response for v0.3.1992*: Identified a dependency-graph search flaw within *3 hours* and designed a new algorithm to resolve a critical resource-exhaustion bug discovered four hours after release, containing the impact on the community.
+        - #link("https://www.rust-lang.org/governance/teams/compiler#team-rust-analyzer-contributors", [#fa[#rust] *Rust-lang Organization*]) member (rust-analyzer-contributors-team) and *maintainer* of #ghrepo("rust-lang/rust-analyzer", icon: false), the official Rust IDE; ranked in the *top 1%* of contributors, triaged issues, reviewed PRs, and helped maintain rust-clippy;
+        - Shipped control-flow highlighting, snapshot-test updates, and bug fixes across code understanding, code generation, and related IDE workflows;
+        - Implemented a NEON *SIMD* version of the Unicode line-breaking module, achieving a *6.5x* speedup on ARM;
+        - *v0.3.1992 incident response*: Within *3 hours*, replaced a flawed dependency-graph search algorithm and resolved a severe resource-exhaustion bug discovered four hours after release.
     ]
 
   == #fa[#project-diagram] Projects
@@ -75,9 +75,9 @@
         br: [Rust / SystemVerilog],
         tr: [#link("https://vide.pascal-lab.net")[VIDE]],
     )[
-        - Implemented a *semantic analysis framework* and IDE infrastructure for SystemVerilog, enabling modern IDE capabilities for chip design;
-        - Built on an *incremental computation* architecture, designed and implemented an incremental analysis IR and incremental analysis passes, allowing the analyzer to produce accurate results without full recomputation;
-        - Project reaches *industry-leading standards* in functionality and performance: completed *more than 10* modern IDE features for SystemVerilog, including code navigation, semantic refactoring, and code completion, with *millisecond-level* latency through incremental semantic analysis; based on the Language Server Protocol, compatible with mainstream editors such as VS Code and Emacs;
+        - Built a SystemVerilog *semantic analysis framework* and IDE infrastructure for modern chip-design workflows;
+        - Designed an incremental analysis IR and pass pipeline on top of an *incremental computation* architecture, enabling accurate analysis without full recomputation;
+        - Delivered *10+* SystemVerilog IDE features, including navigation, refactoring, and completion, with *millisecond-level* latency via incremental semantic analysis; supports VS Code, Emacs, and other LSP editors;
     ]
 
     #cventry(
@@ -86,39 +86,32 @@
         br: [Rust],
         tr: [#ghrepo("roife/ailurus")],
     )[
-        - Based on *Martin-Löf type theory*; supports *dependent types*, dependent pattern matching, and inductive datatypes. Implements propositional equality and uses Normalization by Evaluation for equivalence checking, enabling simple theorem proving;
-        - Uses *typeclass-based* ad-hoc polymorphism and implements *operator overloading* on top of it; implements a *module system* for namespace management and encapsulation;
-        - Serves as an experimental platform for exploring collaborative design architectures for modern programming language toolchains, such as compilers and IDEs, improving development efficiency and maintainability.
+        - Based on *Martin-Löf type theory*; supports *dependent types*, dependent pattern matching, inductive datatypes, equality proofs, and NbE;
+        - Implements *typeclass-based* ad-hoc polymorphism, *operator overloading*, and a *module system* for namespaces;
+        - Experimental platform for co-designing modern programming-language toolchains, including compilers and IDEs, for better efficiency and maintainability.
     ]
+
+    #pagebreak()
 
     #cventry(
         tl: [#fa[#code.branch] Open Source Contributions],
     )[
-        - *#fa[#rust]* Maintain the official Rust IDE (language server) #ghrepo("rust-lang/rust-analyzer"); also contributed to Rust community projects including #ghrepo("rust-lang/rust"), #ghrepo("rust-lang/rust-clippy"), #ghrepo("rust-lang/rustup"), #ghrepo("rust-lang/rust-mode");
-        - #ghrepo("llvm/llvm-project"), #ghrepo("clangd/vscode-clangd"), #ghrepo("LuaLS/lua-language-server"), #ghrepo("google/autocxx"), #ghrepo("yuin/goldmark"), #ghrepo("moonbitlang/tree-sitter-moonbit"), #link("https://github.com/roife")[see more projects on GitHub].
+        - *#fa[#rust]* Maintainer of #ghrepo("rust-lang/rust-analyzer", icon: false), the official Rust IDE / language server; contributed to the #link("https://github.com/rust-lang/rust")[Rust compiler], #link("https://github.com/rust-lang/rust-clippy")[clippy], #link("https://github.com/rust-lang/rustup")[rustup], and #link("https://github.com/rust-lang/rust-mode")[rust-mode];
+        - Other OSS: #link("https://github.com/llvm/llvm-project")[LLVM], #link("https://github.com/clangd/vscode-clangd")[vscode-clangd], #link("https://github.com/LuaLS/lua-language-server")[lua-language-server], #link("https://github.com/google/autocxx")[autocxx], #link("https://github.com/yuin/goldmark")[goldmark], #link("https://github.com/moonbitlang/tree-sitter-moonbit")[tree-sitter-moonbit], and #link("https://github.com/roife")[more on GitHub].
     ]
 
   == #fa[#laptop.code] Skills
 
-    #grid(
-        columns: (auto, auto),
-        align: (right, left),
-        row-gutter: 11pt,
-        gutter: 8pt,
-        [*Programming Languages*], [Language-agnostic capabilities. Proficient in C, C++, Rust, Java, Python, JavaScript/TypeScript, Verilog/SystemVerilog, and EmacsLisp; studied and used Ruby, Swift, OCaml, Haskell, Coq, Agda, etc.;],
-        [*Programming Language Theory*], [
-            - Fundamentals including formal semantics, type theory, computation models, and automata; experience with proof assistants such as Coq and Agda;
-            - (*Type Systems*) Theory and implementation of Hindley-Milner, subtyping, System F, dependent types, etc.;
-            - (*Static Analysis*) Data-flow analysis, control-flow analysis, IFDS, and pointer analysis with varying sensitivities.
-        ],
-        [*Compiler Design*], [*3 years of experience*. Proficient in full-pipeline compiler development from parsing to code generation, and familiar with multiple *IRs* (ANF, SSA, CPS, etc.):
-            - (*Language Implementation*) Compilation for object-oriented, functional, and other paradigms, and implementation of language features such as bidirectional type checking;
-            - (*IDE Development*) *2 years of experience* with IDE architecture based on *incremental computation* and *LSP*, plus editor plugin development; familiar with rust-analyzer and clangd;
-            - (*Compiler Optimization*) Middle-end and backend analyses and optimizations, including Mem2Reg, GVN, RegAlloc, List Scheduling, etc.; familiar with *LLVM* analysis and optimization implementations, the LLVM codebase, LLVM-IR, and MLIR;
-        ],
-        [*Application Development*], [Ruby on Rails, Django, SwiftUI, and other development frameworks; PostgreSQL, Redis, and other databases; Docker, CI/CD configuration, and other DevOps work;],
-        [*Development Environment*], [Proficient in Emacs / VS Code, comfortable working on macOS / Linux, and skilled at using generative AI tools to improve efficiency.],
-    )
+    - *Programming Languages*: Proficient in C, C++, Rust, Java, Python, JavaScript/TypeScript, Verilog/SystemVerilog, and EmacsLisp; also used Ruby, Swift, OCaml, Haskell, and Coq;
+    - *Programming Language Theory*: Formal semantics, type theory, computation models, and automata; experience with proof assistants including Coq;
+      - (*Type Systems*) Theory and implementation of Hindley-Milner, subtyping, System F, and dependent types;
+      - (*Static Analysis*) *4 YoE* with theory and implementation of abstract interpretation, data-flow/control-flow/pointer analysis, and CodeQL/Datalog interpreters.
+    - *Compiler Design*: *3 YoE*. End-to-end compiler development from parsing to codegen; familiar with *IRs* such as SSA, DBI;
+      - (*Language Implementation*) Object-oriented/functional languages; bidirectional type checking and related features;
+      - (*IDE Development*) *3 YoE* with rust-analyzer/clangd, *LSP*, and *incremental computation* architecture;
+      - (*Compiler Optimization*) *3 YoE* with middle-end/backend optimization, including Mem2Reg, GVN, RegAlloc, and List Scheduling; familiar with *LLVM* internals, LLVM-IR, and MLIR;
+    - *Application Development*: Ruby on Rails, Django, SwiftUI; PostgreSQL, Redis; Docker, CI/CD, and DevOps.
+    - *Development Environment*: Proficient in Emacs / VS Code on macOS / Linux; skilled at using generative AI tools to improve efficiency.
 
   == #fa[#th.list] Misc
 

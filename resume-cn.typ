@@ -107,12 +107,12 @@
         [*程序语言理论*], [
             - 形式语义、类型论、计算模型、自动机等基础理论；学习过 Coq、Agda 等定理证明器的使用；
             - （*类型系统*）Hindley-Milner, Subtyping, System F, Dependent Type 等类型系统的理论和实现；
-            - （*静态分析*）数据流分析、控制流分析、IFDS、采用不同敏感度的*指针分析*等常用分析算法
+            - （*静态分析*）*4 年经验*，数据流分析、控制流分析、指针分析等静态分析算法；抽象解释等静态分析理论；Datalog 解释器及相关工具（如 CodeQL）的原理和实现；
         ],
-        [*编译器设计*], [*3 年经验*。精通编译器从语法解析到代码生成的*全 pipeline 开发*，熟悉多种 *IR*（ANF, SSA, CPS 等）：
+        [*编译器设计*], [*3 年经验*。精通编译器从语法解析到代码生成的*全 pipeline 开发*，熟悉多种 *IR*（SSA, CPS 等）：
             - （*语言实现*）面向对象、函数式等多种范式语言的编译过程，以及双向类型检查等语言特性的实现；
-            - （*IDE 开发*） *2 年经验*，基于*增量计算*和 *LSP* 的 IDE 架构，编辑器插件开发；熟悉 rust-analyzer 和 clangd；
-            - （*编译优化*）编译器中端、后端的分析和优化，包括 Mem2Reg, GVN, RegAlloc, List Scheduling 等；熟悉 *LLVM* 上的分析优化实现和代码库，熟悉 LLVM-IR 与 MLIR；
+            - （*IDE 开发*）*3 年经验*，基于*增量计算*和 *LSP* 的 IDE 架构；熟悉 rust-analyzer 和 clangd 的架构；
+            - （*编译优化*）*3 年经验*，编译器中端、后端的分析和优化，包括 Mem2Reg, GVN, RegAlloc, List Scheduling 等；熟悉 *LLVM* 上的分析优化实现和代码库，熟悉 LLVM-IR 与 MLIR；
         ],
         [*应用开发*], [Ruby on Rails, Django, SwiftUI 等开发框架；PostgreSQL、Redis 等数据库；Docker 和 CI/CD 配置等 DevOps 工作；],
         [*开发环境*], [熟悉 Emacs / VS Code，习惯在 macOS / Linux 下工作；熟练使用生成式 AI 工具提高效率。],
